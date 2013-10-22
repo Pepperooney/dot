@@ -19,9 +19,12 @@ if [ -d /usr/local/etc/bash_completion.d ]; then
     done
 fi
 
-# User specific environment and startup programs
-export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/opt/local/bin
-eval "$(rbenv init -)"
+# PATH and ruby environment
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/opt/local/bin"
+if [ -d "$HOME/.rbenv/bin" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 # locale settings
 export LANG=en_US.UTF-8
