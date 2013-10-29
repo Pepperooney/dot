@@ -65,3 +65,6 @@ export COLORPROMPTPWD=1
 alias proxy='ssh -L [::1]:3128:[::1]:8888 cosima'
 alias sabproxy='ssh -L 1563:news.newshosting.com:563 vm'
 alias google-chrome-no-proxy="google-chrome --no-proxy-server"
+
+# tmux
+alias takeover="tmux detach -a"

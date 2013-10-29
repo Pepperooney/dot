@@ -1,0 +1,10 @@
+LOGFILE=$HOME/log/procmail.log
+
+:0c:
+Mail/archive
+
+:0c
+| $HOME/bin/mail2imap.sh
+
+:0
+! starturtle@icloud.com
