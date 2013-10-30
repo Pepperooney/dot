@@ -1,10 +1,17 @@
 #!/bin/bash
 
+host=starturtle.eu.org
+dest=/etc/postfix
+postmap=/usr/sbin/postmap
+
 tmp=$(mktemp)
 
-if ! curl -so $tmp http://starturtle.eu.org/virtual; then
-    exit 1
-fi
-cp $tmp /etc/postfix/virtual
+for file in virtual rcpt; do
+    if ! curl -so $tmp http://$host/$file; then
+        continue
+    fi
+    cp $tmp /etc/postfix/$file
+    $postmap /etc/postfix/$file
+done
+
 rm -f $tmp
-/usr/sbin/postmap /etc/postfix/virtual
