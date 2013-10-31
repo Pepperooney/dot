@@ -10,7 +10,7 @@ for file in virtual rcpt; do
     if ! curl -so $tmp http://$host/$file; then
         continue
     fi
-    if diff -q $tmp /etc/postfix/$file >/dev/null; then
+    if ! cmp -s $tmp /etc/postfix/$file; then
         cp $tmp /etc/postfix/$file
         $postmap /etc/postfix/$file
     fi
