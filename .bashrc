@@ -54,7 +54,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # home related
-alias pi='ssh -L 8080:127.0.0.1:8080 -L 8081:127.0.0.1:8081 pi'
+alias mini='ssh -L 8080:127.0.0.1:8080 -L 8081:127.0.0.1:8081 -L 32443:127.0.0.1:32443 mini'
 
 # work related
 export COLORPROMPTNOBACKGROUND=1
