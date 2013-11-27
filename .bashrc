@@ -28,6 +28,7 @@ fi
 
 # locale settings
 export LANG=en_US.UTF-8
+export LANGUAGE=en_US
 export LC_CTYPE=en_US.UTF-8
 export LC_COLLATE=en_US.UTF-8
 export LC_MONETARY=de_DE.UTF-8
