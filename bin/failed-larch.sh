@@ -18,7 +18,7 @@ $larch -V insane --max-retries 0 backup > $tmp 2>&1
 grep APPEND $tmp | while read x tag x; do
     sed -n "/^C: $tag APPEND/,/^S: $tag BAD/p" $tmp | sed -n "s/^C: $tag APPEND Archiv[^\"]*\"\([^\"]*\)\".*/From uwe  \1/p;s/^C: //p" | tr -d "\r" | while read -r line; do
         if [ "${line:0:10}" = "From uwe  " ]; then
-            echo "${line:0:10}$(date -d "${line:11}" -R)"
+            echo "${line:0:10}$(date -d "${line:10}" -R)"
         else
             echo "$line"
         fi
