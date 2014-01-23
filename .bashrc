@@ -5,10 +5,6 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-if [ -f ~/.proxy ]; then
-    . ~/.proxy
-fi
-
 # bash-completion
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
@@ -19,12 +15,8 @@ if [ -d /usr/local/etc/bash_completion.d ]; then
     done
 fi
 
-# PATH and ruby environment
+# PATH
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/opt/local/bin"
-if [ -d "$HOME/.rbenv/bin" ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
 
 # locale settings
 export LANG=en_US.UTF-8
@@ -53,19 +45,4 @@ alias nfo='iconv -f cp437 -t utf-8'
 alias tmux='echo -ne "\033]0;$(hostname):tmux\007"; tmux'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
-# home related
-alias mini='ssh -L 8080:127.0.0.1:8080 -L 8081:127.0.0.1:8081 -L 32443:127.0.0.1:32443 mini'
-
-# work related
-export COLORPROMPTNOBACKGROUND=1
-export COLORPROMPTNODELETE=1
-export COLORPROMPTPWD=1
-
-# still work, but more private related
-alias proxy='ssh -L [::1]:3128:[::1]:8888 cosima'
-alias sabproxy='ssh -L 1563:news.newshosting.com:563 vm'
-alias google-chrome-no-proxy="google-chrome --no-proxy-server"
-
-# tmux
 alias takeover="tmux detach -a"
