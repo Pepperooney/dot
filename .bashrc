@@ -46,3 +46,4 @@ alias tmux='echo -ne "\033]0;$(hostname):tmux\007"; tmux'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias takeover="tmux detach -a"
+alias axel="axel -an $[RANDOM%20+10]"
