@@ -1,3 +1,5 @@
 [user]
 	name = Uwe Schwarz
 	email = uwe@erde.lu
+[push]
+	default = simple

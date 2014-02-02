@@ -6,7 +6,7 @@ mail2imap=~/bin/mail2imap.sh
 $larch --max-retries 0 backup | grep -q [1-9].failed
 
 if [ $? -ne 0 ]; then
-    echo everything good, nothing to do
+    #everything good, nothing to do
     exit
 fi
 
