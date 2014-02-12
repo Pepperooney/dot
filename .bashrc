@@ -28,6 +28,9 @@ export LC_NUMERIC=de_DE.UTF-8
 export LC_TIME=de_DE.UTF-8
 export LC_MESSAGES=en_US.UTF-8
 
+# history
+export HISTTIMEFORMAT='[%Y-%m-%d %T] '
+
 # only if interactive shell
 if [ -n "$PS1" ]; then
     # Prompt if interactive
