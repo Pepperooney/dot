@@ -22,3 +22,6 @@ source ~/.zsh/git-prompt/zshrc.sh
 
 PROMPT='%{$fg_bold[green]%}%n%{$reset_color%}@%{$fg_bold[cyan]%}%m %{$fg_bold[yellow]%}%~%{$reset_color%}$(git_super_status) %# '
 RPROMPT='[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]'
+
+# syntax highlighting
+source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh

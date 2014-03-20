@@ -1,3 +1,6 @@
 [submodule ".zsh/git-prompt"]
 	path = .zsh/git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt.git
+[submodule ".zsh/syntax-highlighting"]
+	path = .zsh/syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
