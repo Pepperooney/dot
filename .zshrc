@@ -6,8 +6,10 @@ compinit
 
 # history
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=2000
+SAVEHIST=2000
+
+setopt APPEND_HISTORY HIST_EXPIRE_DUPS_FIRST EXTENDED_HISTORY
 
 # options
 setopt autocd extendedglob notify
