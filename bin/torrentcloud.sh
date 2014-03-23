@@ -48,7 +48,7 @@ t_list() {
         ratio="$(egrep -o "TORRENT=$t.*Ratio:</b> [0-9.]+" $tmp | awk '{print $NF}')"
         full="$(egrep -o "TORRENT=$t.* [0-9.]+%" "$tmp" | awk '{print $NF}')"
         slot="$(egrep -o "TORRENT=$t.*SLOT=[0-9]+" "$tmp" | awk -F= '{print $NF}')"
-        printf "%d\t%s\t\t%s\t%s\n" "$t" "$ratio$full" "$slot" "$title"
+        printf "%d\t%s\t\t%s\t%s\n" "$t" "${ratio:0:7}$full" "$slot" "$title"
     done
 }
 
