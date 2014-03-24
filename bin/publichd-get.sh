@@ -12,6 +12,6 @@ echo "$xml" | egrep '/item/title|/item/torrent/magnetURI'  | cut -d= -f2- | whil
     t="$(echo "$t" | cut -d' ' -f2-)"
     read r
     if ! grep -qF "$t	$r" $log; then
-        printf "$t\t$r\n" >> $log
+        printf "%s\t%s\n" "$t" "$r" >> $log
     fi
 done
