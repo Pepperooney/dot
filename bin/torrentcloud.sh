@@ -103,6 +103,7 @@ t_down() {
     else
         err=1
     fi
+    [ -d /tmp/$$ ] && rmdir /tmp/$$
 }
 
 # main
