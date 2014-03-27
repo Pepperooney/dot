@@ -39,4 +39,5 @@ RPROMPT='$(git_super_status)[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]'
 # syntax highlighting
 source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# aliases
+# work
+[ -f ~/.zshrc.work ] && source ~/.zshrc.work
