@@ -21,7 +21,7 @@ bindkey '\e[B' down-line-or-beginning-search
 setopt APPEND_HISTORY HIST_EXPIRE_DUPS_FIRST EXTENDED_HISTORY
 
 # options
-setopt autocd extendedglob notify
+setopt autocd extendedglob notify BRACE_CCL
 bindkey -e
 
 # add some colors
