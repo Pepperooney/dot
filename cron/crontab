@@ -1,0 +1,21 @@
+# E-Mail-Backup
+15 */3 * * *        ~/bin/larch.sh
+
+# mediathek
+*/30 18-20 * * 1-5  ~/dl/mediathek/mediathek.sh
+
+# domains
+50 9 * * *          ~/bin/create_domains.sh
+
+# start on reboot
+#@reboot             ~/dl/minidlna/minidlnad -L -f ~/dl/minidlna/minidlna.conf -P ~/dl/minidlna/minidlna.pid
+@reboot             /usr/lib/btsync/btsync-daemon --config ~/.btsync.conf
+@reboot             python ~/dl/Sick-Beard/SickBeard.py -d
+#@reboot             python ~/dl/CouchPotatoServer/CouchPotato.py --daemon
+
+# pirate
+*/7 * * * *        ~/bin/publichd-get.sh
+3,33 * * * *        ~/bin/kickass-get.sh
+
+# weather
+0 * * * *           curl -s http://www.dwd.de/dyn/app/ws/html/reports/FTX_warning_de.html | grep -q "Es sind keine Warnungen " || curl -s http://www.dwd.de/dyn/app/ws/html/reports/FTX_warning_de.html
