@@ -41,3 +41,7 @@ source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # work
 [ -f ~/.zshrc.work ] && source ~/.zshrc.work
+
+# aliases
+#  pkgrep
+source ~/bin/pkgrep.zsh
