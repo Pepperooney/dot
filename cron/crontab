@@ -8,14 +8,15 @@
 50 9 * * *          ~/bin/create_domains.sh
 
 # start on reboot
-#@reboot             ~/dl/minidlna/minidlnad -L -f ~/dl/minidlna/minidlna.conf -P ~/dl/minidlna/minidlna.pid
 @reboot             /usr/lib/btsync/btsync-daemon --config ~/.btsync.conf
 @reboot             python ~/dl/Sick-Beard/SickBeard.py -d
-#@reboot             python ~/dl/CouchPotatoServer/CouchPotato.py --daemon
 
 # pirate
-*/7 * * * *        ~/bin/publichd-get.sh
+*/7 * * * *         ~/bin/publichd-get.sh
 3,33 * * * *        ~/bin/kickass-get.sh
+
+# remove nfo files for tv shows
+30 3 * * *          find /media/uwe/tv \! -name tvshow.nfo -name \*nfo | while read n; do c="$(ls "${n%nfo}"* | wc -l)"; [ $c -eq 1 ] && rm "$n"; done
 
 # weather
 0 * * * *           curl -s http://www.dwd.de/dyn/app/ws/html/reports/FTX_warning_de.html | grep -q "Es sind keine Warnungen " || curl -s http://www.dwd.de/dyn/app/ws/html/reports/FTX_warning_de.html
