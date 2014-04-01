@@ -106,6 +106,13 @@ t_down() {
     [ -d /tmp/$$ ] && rmdir /tmp/$$
 }
 
+t_downwait() {
+    while ! $0 down "$1"; do
+        $0 list
+        sleep 60
+    done
+}
+
 # main
 case "${1:-list}" in
     "add") t_add "$2" "$3" ;;
@@ -113,6 +120,7 @@ case "${1:-list}" in
     "down") t_down "$2" ;;
     "delete") t_delete "$2" ;;
     "slot") t_slot "$2" "$3" ;;
+    "downwait") t_downwait "$2" ;;
 esac
 
 rm -f "$tmp"
