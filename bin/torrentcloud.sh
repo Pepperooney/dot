@@ -68,6 +68,7 @@ t_delete() {
 # download torrent $1
 t_down() {
     t="$1"
+    conv="${2:-y}"
     title="$(grep "titl.*M$t" "$tmp" | sed 's/^.*<b [^>]*>//;s/<.*$//;s/.magnet//')"
     down="$(curl -s "$url?_LIST_ORRENTS&TORRENT=$t&DOWNLOAD=all" | grep -o "https[^\"]*")"
     mkdir /tmp/$$
@@ -89,11 +90,13 @@ t_down() {
             else
                 printf "downloading file: %s\n" "${n[$last]}"
                 $dl "$down/${n[$last]}"
-                fn="$(echo -e "$(echo "${n[$last]/*\/}" | sed 's/%\([0-9][0-9]*\)/\\x\1/g')")"
-                ext="${n[$last]:$[${#n[$last]}-3]:3}"
-                if [ "$ext" == "mkv" -o "$ext" == "avi" -o "$ext" == "mpg" ]; then
-                    printf "converting to mp4: %s\n" "/tmp/$$/$fn"
-                    $mp4 "/tmp/$$/$fn"
+                if [ "$conv" == "y" ]; then
+                    fn="$(echo -e "$(echo "${n[$last]/*\/}" | sed 's/%\([0-9][0-9]*\)/\\x\1/g')")"
+                    ext="${n[$last]:$[${#n[$last]}-3]:3}"
+                    if [ "$ext" == "mkv" -o "$ext" == "avi" -o "$ext" == "mpg" ]; then
+                        printf "converting to mp4: %s\n" "/tmp/$$/$fn"
+                        $mp4 "/tmp/$$/$fn"
+                    fi
                 fi
             fi
             unset n[$last]
@@ -109,18 +112,25 @@ t_down() {
 t_downwait() {
     while ! $0 down "$1"; do
         $0 list
-        sleep 60
+        read -p "stop with any key" -t 60 -n 1
+        if [ $? -eq 0 ]; then break; fi
+        echo
     done
+}
+
+t_help() {
+    echo "help, not implemented"
 }
 
 # main
 case "${1:-list}" in
     "add") t_add "$2" "$3" ;;
     "list") t_list ;;
-    "down") t_down "$2" ;;
+    "down") t_down "$2" "$3" ;;
     "delete") t_delete "$2" ;;
     "slot") t_slot "$2" "$3" ;;
     "downwait") t_downwait "$2" ;;
+    "help") t_help ;;
 esac
 
 rm -f "$tmp"

@@ -2,5 +2,6 @@
 
 phd=~/dl/publichd
 kick=~/dl/kickass
+tc=~/bin/torrentcloud.sh
 
-torrentcloud.sh add "$(grep -h "$*" $phd $kick | head -n 1 | cut -d$'\t' -f2-)"                                                 
+$tc add "$(grep -h "$*" $phd $kick | head -n 1 | cut -d$'\t' -f2-)"                                                 
