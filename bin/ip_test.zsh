@@ -8,7 +8,11 @@ run=~/dot/bin/ip_new.zsh
 if [ ! -f "$old" ]; then touch "$old"; fi
 
 ip_new="$(dig +short "$rr" "$h")"
+
 if [ $? -ne 0 ]; then exit; fi
+nc -zw 1 $h 22
+if [ $? -ne 0 ]; then exit; fi
+
 ip_old="$(<"$old")"
 
 
