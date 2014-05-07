@@ -3,7 +3,7 @@
 host="www.torrentcloud.eu"
 uri="/cp/"
 u="$(grep "machine $host .*login " ~/.netrc | awk '{print $4}')"
-p="$(grep "machine $host .*login $usr" ~/.netrc | awk '{print $6}')"
+p="$(grep "machine $host .*login " ~/.netrc | awk '{print $6}')"
 
 url="https://$u:$p@$host$uri"
 
