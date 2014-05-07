@@ -43,5 +43,5 @@ source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/.zshrc.work ] && source ~/.zshrc.work
 
 # aliases
-source ~/bin/pkgrep.zsh
+source ~/dot/bin/pkgrep.zsh
 alias takeover="tmux detach -a"
