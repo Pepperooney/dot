@@ -25,7 +25,9 @@ setopt autocd extendedglob notify BRACE_CCL
 bindkey -e
 
 # add some colors
-alias ls='ls --group-directories-first --color'
+if [ "$(uname)" != "Darwin" ]; then
+    alias ls='ls --group-directories-first --color'
+fi
 alias grep='grep --color=auto'
 alias zgrep='zgrep --color=auto'
 autoload -U colors && colors
