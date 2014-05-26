@@ -9,12 +9,16 @@ url="https://$u:$p@$host$uri"
 
 dl="axel -a -n 8"
 mp4=~/bin/2mp4
-target=~/dl/torrent
+target=/Volumes/media/dl/torrent
 
 err=0
 
 # get files
-tmp="$(mktemp)"
+if type gmktemp >/dev/null; then
+    tmp="$(gmktemp)"
+else
+    tmp="$(mktemp)"
+fi
 curl -s "$url" > "$tmp"
 slots_avail="$(egrep -o '<b>[0-9]+</b> available' "$tmp" | egrep -o '[0-9]+')"
 
