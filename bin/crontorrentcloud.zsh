@@ -1,8 +1,8 @@
 #!/usr/bin/zsh
 
-log=~/dl/tc.log
-tc=~/bin/torrentcloud.sh
-lock=~/dl/tc.lock
+log=/Volumes/media/dl/tc.log
+tc=~/dot/bin/torrentcloud.sh
+lock=/Volumes/media/dl/tc.lock
 
 if [ -f "$lock" ]; then
     exit
