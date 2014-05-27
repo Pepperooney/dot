@@ -1,5 +1,9 @@
 #!/usr/bin/zsh
 
+if [ ! -d /Volumes/media/dl ]; then
+    exit
+fi
+
 log=/Volumes/media/dl/tc.log
 tc=~/dot/bin/torrentcloud.sh
 lock=/Volumes/media/dl/tc.lock

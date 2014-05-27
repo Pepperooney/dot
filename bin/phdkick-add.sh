@@ -1,7 +1,6 @@
 #!/bin/bash
 
-phd=~/dl/publichd
-kick=~/dl/kickass
-tc=~/bin/torrentcloud.sh
+phd=/Volumes/media/dl/publichd
+tc=~/dot/bin/torrentcloud.sh
 
-$tc add "$(grep -h "$*" $phd $kick | head -n 1 | cut -d$'\t' -f2-)"                                                 
+$tc add "$(grep -h "$*" $phd | head -n 1 | cut -d$'\t' -f2-)"                                                 
