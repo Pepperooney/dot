@@ -10,6 +10,7 @@ url="https://$u:$p@$host$uri"
 dl="axel -a -n 8"
 mp4=~/bin/2mp4
 target=/Volumes/media/dl/torrent
+targettmp=/Volumes/media/dl/tmp
 
 err=0
 
@@ -106,11 +107,12 @@ t_down() {
             unset n[$last]
         done
         printf "moving %s to %s\n" "/tmp/$$" "$target/$title"
-        mv "/tmp/$$" "$target/$title"
+        mv "/tmp/$$" "$targettmp/"
+        mv "$targettmp/$$" "$target/$title"
     else
         err=1
     fi
-    [ -d /tmp/$$ ] && rmdir /tmp/$$
+    [ -d /tmp/$$ ] && rm -r /tmp/$$
 }
 
 t_downwait() {

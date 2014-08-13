@@ -35,7 +35,7 @@ autoload -U colors && colors
 # gitstatus https://github.com/olivierverdier/zsh-git-prompt
 source ~/.zsh/git-prompt/zshrc.sh
 
-PROMPT='%{$fg_bold[green]%}%n%{$reset_color%}@%{$fg_bold[cyan]%}%m %{$fg_bold[yellow]%}%~%{$reset_color%} %# '
+PROMPT='%{$fg_bold[green]%}%n%{$reset_color%}@%{$fg_bold[cyan]%}%m %{$fg_bold[yellow]%}%~%{$reset_color%} ✗ '
 RPROMPT='$(git_super_status)[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]'
 
 # syntax highlighting
