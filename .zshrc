@@ -49,4 +49,4 @@ export LC_ALL="en_US.UTF-8"
 
 # aliases
 alias takeover="tmux detach -a"
-alias pwrandom="curl -s 'https://www.random.org/passwords/?num=1&len=15&format=plain&rnd=new' | sed 's/.../&-/g;s/-$//'"
+alias pwrandom="curl -s 'https://www.random.org/passwords/?num=1&len=15&format=plain&rnd=new' | sed 's/.../&-/g;s/-$//' | tr -d '\n' | pbcopy; pbpaste; echo"
