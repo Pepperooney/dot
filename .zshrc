@@ -1,6 +1,7 @@
 # completion
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle :compinstall filename '/home/uwe/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
+fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
 compinit
 
@@ -53,4 +54,9 @@ if whence pbcopy >/dev/null; then
     alias pwrandom="curl -s 'https://www.random.org/passwords/?num=1&len=15&format=plain&rnd=new' | sed 's/.../&-/g;s/-$//' | tr -d '\n' | pbcopy; pbpaste; echo"
 else
     alias pwrandom="curl -s 'https://www.random.org/passwords/?num=1&len=15&format=plain&rnd=new' | sed 's/.../&-/g;s/-$//'"
+fi
+
+# only on i
+if [[ "$(hostname -s)" == "i" ]]; then
+    PATH="$PATH:/Volumes/media/dl/bin"
 fi
