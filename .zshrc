@@ -25,6 +25,9 @@ setopt APPEND_HISTORY HIST_EXPIRE_DUPS_FIRST EXTENDED_HISTORY
 setopt autocd extendedglob notify BRACE_CCL
 bindkey -e
 
+# stop at / with C-w
+WORDCHARS="${WORDCHARS//\//}"
+
 # add some colors
 if [ "$(uname)" != "Darwin" ]; then
     alias ls='ls --group-directories-first --color'
