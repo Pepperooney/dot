@@ -66,5 +66,5 @@ fi
 
 # only on balu 
 if [[ "$(hostname -s)" == "balu" ]]; then
-    PATH="$PATH:~/xdcc/bin"
+    PATH="$PATH:$HOME/xdcc/bin"
 fi
