@@ -62,4 +62,8 @@ fi
 # only on i
 if [[ "$(hostname -s)" == "i" ]]; then
     PATH="$PATH:/Volumes/media/dl/bin"
+
+# only on balu 
+if [[ "$(hostname -s)" == "balu" ]]; then
+    PATH="$PATH:~/xdcc/bin"
 fi
