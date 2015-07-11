@@ -3,7 +3,6 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
-set number
 set laststatus=2
 
 set t_Co=256
