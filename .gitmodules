@@ -7,3 +7,6 @@
 [submodule ".zsh/zsh-autosuggestions"]
 	path = .zsh/zsh-autosuggestions
 	url = https://github.com/tarruda/zsh-autosuggestions.git
+[submodule ".vim/papercolor-theme"]
+	path = .vim/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme.git
