@@ -10,3 +10,6 @@
 [submodule ".vim/papercolor-theme"]
 	path = .vim/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule ".vim/vim-atom-dark"]
+	path = .vim/vim-atom-dark
+	url = https://github.com/gosukiwi/vim-atom-dark.git
