@@ -58,13 +58,3 @@ if whence pbcopy >/dev/null; then
 else
     alias pwrandom="curl -s 'https://www.random.org/passwords/?num=1&len=15&format=plain&rnd=new' | sed 's/.../&-/g;s/-$//'"
 fi
-
-# only on i
-if [[ "$(hostname -s)" == "i" ]]; then
-    PATH="$PATH:/Volumes/media/dl/bin"
-fi
-
-# only on balu 
-if [[ "$(hostname -s)" == "balu" ]]; then
-    PATH="$PATH:$HOME/xdcc/bin"
-fi
