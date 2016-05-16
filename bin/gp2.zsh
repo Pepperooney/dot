@@ -16,5 +16,5 @@ if [ $v -eq 1 ]; then
     echo "$comment"
 fi
 
-convert "png64:$1" "rgba:${1%.png}"
+convert "png48:$1" "rgb:${1%.png}"
 dd if="${1%.png}" of="${1%.png}" bs=1 count=0 seek=$size 2>/dev/null
