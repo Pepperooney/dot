@@ -3,7 +3,7 @@ zstyle ':completion:*' completer _expand _complete _ignored _correct _approximat
 zstyle :compinstall filename '~/.zshrc'
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
-compinit
+compinit -u
 
 # history
 HISTFILE=~/.histfile
