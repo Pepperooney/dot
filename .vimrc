@@ -3,6 +3,10 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
+set showbreak=↪
+
+:nmap <C-N><C-N> :set invrelativenumber<CR>
+
 set laststatus=2
 
 set t_Co=256
