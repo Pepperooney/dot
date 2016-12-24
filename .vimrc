@@ -5,6 +5,8 @@ set smartindent
 
 set showbreak=↪
 
+set hlsearch
+
 :nmap <C-N><C-I> :set invrelativenumber<CR>
 :nmap <C-N><C-N> :set invnumber<CR>
 
