@@ -14,9 +14,13 @@ set laststatus=2
 
 set t_Co=256
 colorscheme atom-dark-256
-syntax on
 
 filetype on
 filetype plugin on
 
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+
+syntax on
+
+" csv plugin
+let g:csv_no_column_highlight = 1
