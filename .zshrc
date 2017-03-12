@@ -59,3 +59,4 @@ if whence pbcopy >/dev/null; then
 else
     alias pwrandom="curl -s 'https://www.random.org/passwords/?num=1&len=15&format=plain&rnd=new' | sed 's/.../&-/g;s/-$//'"
 fi
+alias jen="gcloud compute ssh --zone "us-central1-b" jen"
