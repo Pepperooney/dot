@@ -3,8 +3,6 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
-set showbreak=↪
-
 set hlsearch
 
 :nmap <C-N><C-I> :set invrelativenumber<CR>
